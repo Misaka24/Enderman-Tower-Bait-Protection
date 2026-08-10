@@ -10,22 +10,22 @@ description="Prevents L2 Hostility Killer Aura damage to the tagged endermite ba
 authors="Misaka24"
 
 [[dependencies.endermiteprotection]]
-modId="neoforge"
-type="required"
+modId="forge"
+mandatory=true
 versionRange="[47.1.106,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.endermiteprotection]]
 modId="minecraft"
-type="required"
+mandatory=true
 versionRange="[1.20.1]"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.endermiteprotection]]
 modId="l2hostility"
-type="required"
+mandatory=true
 versionRange="[2.5.19,)"
 ordering="AFTER"
 side="BOTH"

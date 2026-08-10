@@ -5,9 +5,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Endermite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
 @Mod(EndermiteProtection.MODID)
 public final class EndermiteProtection {
@@ -26,14 +26,14 @@ public final class EndermiteProtection {
                 return;
             }
 
-            if (!entity.getTags().contains("enderman_tower_bait")) {
+            if (!entity.getCommandTags().contains("enderman_tower_bait")) {
                 return;
             }
 
-            ResourceLocation id = entity.level()
-                    .registryAccess()
-                    .registryOrThrow(Registries.DAMAGE_TYPE)
-                    .getKey(event.getSource().type());
+            ResourceLocation id = entity.getWorld()
+                    .getRegistryManager()
+                    .get(Registries.DAMAGE_TYPE)
+                    .getKey(event.getSource().getType());
 
             if (id != null && id.equals(new ResourceLocation("l2hostility", "killer_aura"))) {
                 event.setAmount(0.0F);
