@@ -26,14 +26,14 @@ public final class EndermiteProtection {
                 return;
             }
 
-            if (!entity.getTags().contains("enderman_tower_bait")) {
+            if (!entity.m_19880_().contains("enderman_tower_bait")) {
                 return;
             }
 
-            ResourceLocation id = entity.level()
-                    .registryAccess()
-                    .registryOrThrow(Registries.DAMAGE_TYPE)
-                    .getKey(event.getSource().type());
+            ResourceLocation id = entity.m_9236_()
+                    .m_9598_()
+                    .m_175515_(Registries.f_268580_)
+                    .m_7854_(event.getSource().m_269415_());
 
             if (id != null && id.equals(new ResourceLocation("l2hostility", "killer_aura"))) {
                 event.setAmount(0.0F);
