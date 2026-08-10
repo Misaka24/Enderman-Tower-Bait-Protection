@@ -1,1 +1,8 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url = 'https://maven.neoforged.net/releases' }
+    }
+}
+
 rootProject.name = 'enderman_tower_bait_protection'
