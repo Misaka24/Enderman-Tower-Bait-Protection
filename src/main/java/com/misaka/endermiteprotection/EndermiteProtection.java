@@ -33,7 +33,9 @@ public final class EndermiteProtection {
             ResourceLocation id = entity.m_9236_()
                     .m_9598_()
                     .m_175515_(Registries.f_268580_)
-                    .m_7854_(event.getSource().m_269415_());
+                    .m_7854_(event.getSource().m_269415_())
+                    .map(key -> key.m_135782_())
+                    .orElse(null);
 
             if (id != null && id.equals(new ResourceLocation("l2hostility", "killer_aura"))) {
                 event.setAmount(0.0F);
